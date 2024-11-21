@@ -1,0 +1,129 @@
+/* Profile.css */
+
+:root {
+    --color-background: #D8CEC4;
+    --color-primary: #D29062;
+    --color-text: black;
+    --color-white: white;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-white);
+    padding: 20px;
+    height: 100vh;
+}
+
+.profile-card {
+    display: flex;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+}
+
+.profile-left {
+    background: linear-gradient(to bottom right, #D29062, #D8CEC4);
+    color: var(--color-black);
+    padding: 20px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-info h2 {
+    margin: 0;
+
+}
+
+.profile-info p {
+    margin: 5px 0 20px;
+    font-size: 18px;
+    color: var(--color-black);
+}
+
+.profile-right {
+    padding: 20px;
+    width: 60%;
+    background: var(--color-background);
+}
+
+h1 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.profile-form .form-group {
+    margin-bottom: 15px;
+}
+
+.profile-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-text);
+}
+
+.profile-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.profile-form .form-group-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-form .form-group-grid .form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.profile-form .form-group-grid .form-group:last-child {
+    margin-right: 0;
+}
+
+.profile-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.profile-btn:hover {
+    background-color: darken(var(--color-primary), 10%);
+}
+
+@media (max-width: 600px) {
+    .profile-card {
+        flex-direction: column;
+    }
+
+    .profile-right {
+        width: 100%;
+    }
+
+    .profile-left {
+        width: 100%;
+    }
+
+    .profile-form .form-group-grid {
+        flex-direction: column;
+    }
+
+    .profile-form .form-group-grid .form-group {
+        margin-right: 0;
+    }
+}

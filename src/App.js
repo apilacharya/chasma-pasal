@@ -2,11 +2,11 @@ import {
   Outlet,
   Route,
   BrowserRouter as Router,
-  Routes
+  Routes,
 } from "react-router-dom";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import './App.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
 import Navbar from "./components/Navbar";
 import ShippingAddressForm from "./pages/address/AddressForm";
 import AdminDashboard from "./pages/admin/admin_dashboard/AdminDashboard";
@@ -22,12 +22,12 @@ import ProductDescription from "./pages/productview/ProdictDescription";
 import Profile from "./pages/profile/Profile";
 import AdminRoutes from "./pages/protected/adminprot";
 import Register from "./pages/registration/Register";
-
+import NavbarComponent from "./components/Navbar";
 
 function UserLayout() {
   return (
     <>
-      <Navbar />
+      <NavbarComponent />
       <Outlet />
     </>
   );
@@ -38,29 +38,30 @@ function App() {
     <Router>
       <ToastContainer />
       <Routes>
-
         <Route element={<UserLayout />}>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/forgot_password" element={<ForgotPassword />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/address" element={<ShippingAddressForm />} />
-          <Route path="/product/:id" element={<ProductDescription />} />
-          <Route path="/orderlist" element={<OrderList />} />
-        </Route>
+          <Route path='/' element={<Dashboard />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/forgot_password' element={<ForgotPassword />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/address' element={<ShippingAddressForm />} />
+          <Route path='/product/:id' element={<ProductDescription />} />
+          <Route path='/orderlist' element={<OrderList />} />
 
+          {/* Protected routes  */}
+          {/* <Route path='/admin/' element={<AdminDashboard />} />
+          <Route path='/admin/update/:id' element={<UpdateProduct />} />
+          <Route path='/admin/order' element={<ViewOrders />} />
+          <Route path='/admin/customers' element={<ViewUsers />} /> */}
+        </Route>
 
         <Route element={<AdminRoutes />}>
-          <Route path="/admin/" element={<AdminDashboard />} />
-          <Route path="/admin/update/:id" element={<UpdateProduct />} />
-          <Route path="/admin/order" element={<ViewOrders />} />
-          <Route path="/admin/customers" element={<ViewUsers />} />
+          <Route path='/admin/' element={<AdminDashboard />} />
+          <Route path='/admin/update/:id' element={<UpdateProduct />} />
+          <Route path='/admin/order' element={<ViewOrders />} />
+          <Route path='/admin/customers' element={<ViewUsers />} />
         </Route>
-
-
-
       </Routes>
     </Router>
   );

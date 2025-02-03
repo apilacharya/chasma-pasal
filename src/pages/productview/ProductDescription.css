@@ -1,164 +1,162 @@
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    /* Light grey background */
-    font-family: 'Arial, sans-serif';
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  /* Light grey background */
 }
 
 .product-details {
-    display: flex;
-    gap: 20px;
-    background-color: #fff;
-    /* White background for the product details section */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 20px;
+  background-color: #fff;
+  /* White background for the product details section */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .image-section {
-    flex: 1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
 }
 
 .image-section img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .product-info {
-    flex: 2;
-    padding: 20px;
-    color: #000;
-    /* Black text color */
+  flex: 2;
+  padding: 20px;
+  color: #000;
+  /* Black text color */
 }
 
 .product-info h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
 .price-category {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .price-category h3,
 .price-category h4 {
-    margin: 0;
-    font-size: 1.2em;
+  margin: 0;
+  font-size: 1.2em;
 }
 
 .description {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .buttons {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .buttons button {
-    flex: 1;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
 }
 
 .buttons .btn-add-to-cart {
-    background-color: #D29062;
-    color: #fff;
+  background-color: #d29062;
+  color: #fff;
 }
 
 .reviews-section {
-    margin-top: -20px;
-    background-color: #fff;
-    /* White background for reviews section */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: -20px;
+  background-color: #fff;
+  /* White background for reviews section */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .quantity-control {
-    display: flex;
-    align-items: center;
-    margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
 }
 
 .quantity-control span {
-    margin: 0 0.5rem;
+  margin: 0 0.5rem;
 }
 
 .quantity-btn {
-    border: none;
-    background-color: #D29062;
-    padding: 0.25rem 0.5rem;
-    cursor: pointer;
+  border: none;
+  background-color: #d29062;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
 }
 
-
 .review-form {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .review-form label {
-    font-weight: bold;
-    color: #000;
+  font-weight: bold;
+  color: #000;
 }
 
 .review-form textarea {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #D8CEC4;
-    margin-bottom: 10px;
-    resize: none;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #d8cec4;
+  margin-bottom: 10px;
+  resize: none;
 }
 
 .review-form button {
-    background-color: #D29062;
-    /* Theme color for submit button */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+  background-color: #d29062;
+  /* Theme color for submit button */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .review-form button:hover {
-    background-color: #c17b50;
-    /* Darker shade for hover effect */
+  background-color: #c17b50;
+  /* Darker shade for hover effect */
 }
 
 .rating-stars {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .review-item {
-    background-color: #F7F7F7;
-    /* Light grey background for review items */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
+  background-color: #f7f7f7;
+  /* Light grey background for review items */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
 }
 
 .review-author {
-    font-style: italic;
-    color: #555;
-    /* Grey color for review author */
+  font-style: italic;
+  color: #555;
+  /* Grey color for review author */
 }
 
 .review-text {
-    margin-top: 10px;
-    color: #000;
-    /* Black text color for reviews */
+  margin-top: 10px;
+  color: #000;
+  /* Black text color for reviews */
 }

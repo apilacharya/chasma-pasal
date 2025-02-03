@@ -10,12 +10,13 @@ const Banner = () => {
     "/assets/images/s1.png",
     "/assets/images/s2.png",
     "/assets/images/s3.jpeg",
+    "/assets/images/s4.png",
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000); // 8000ms = 8s
+    }, 3000); // 8000ms = 8s
 
     return () => clearInterval(interval);
   }, [images.length]);

@@ -217,29 +217,29 @@ const Cart = () => {
 
   return (
     <>
-      <div className='container mx-auto p-4'>
-        <div className='cart-container'>
+      <div className="container mx-auto p-4">
+        <div className="cart-container">
           {cartItems && cartItems.length > 0 ? (
             <>
-              <table className='w-full table-auto'>
+              <table className="w-full table-auto">
                 <thead>
-                  <tr className='text-left border-b'>
-                    <th className='py-2'>PRODUCT</th>
-                    <th className='py-2'>NAME</th>
-                    <th className='py-2'>PRICE</th>
-                    <th className='py-2'>QTY</th>
-                    <th className='py-2'>SUBTOTAL</th>
-                    <th className='py-2'>ACTIONS</th>
+                  <tr className="text-left border-b">
+                    <th className="py-2">PRODUCT</th>
+                    <th className="py-2">NAME</th>
+                    <th className="py-2">PRICE</th>
+                    <th className="py-2">QTY</th>
+                    <th className="py-2">SUBTOTAL</th>
+                    <th className="py-2">ACTIONS</th>
                   </tr>
                 </thead>
                 <tbody>
                   {cartItems.map((cart) => (
-                    <tr key={cart._id} className='border-b'>
-                      <td className='flex items-center py-4'>
+                    <tr key={cart._id} className="border-b">
+                      <td className="flex items-center py-4">
                         <img
                           src={
                             cart.productID
-                              ? `http://localhost:5000/products/${cart.productID.productImage}`
+                              ? `http://localhost:3006/products/${cart.productID.productImage}`
                               : "/placeholder.png"
                           }
                           alt={
@@ -247,7 +247,7 @@ const Cart = () => {
                               ? cart.productID.productName
                               : "Product Image"
                           }
-                          className='w-20 h-20'
+                          className="w-20 h-20"
                         />
                       </td>
                       <td>
@@ -259,18 +259,18 @@ const Cart = () => {
                         NPR.{" "}
                         {cart.productID ? cart.productID.productPrice : "N/A"}
                       </td>
-                      <td className='flex items-center'>
+                      <td className="flex items-center">
                         <button
-                          className='qty-btn'
+                          className="qty-btn"
                           onClick={() =>
                             handleQuantityChange(cart.quantity - 1, cart)
                           }
                         >
                           -
                         </button>
-                        <span className='mx-2'>{cart.quantity || 1}</span>
+                        <span className="mx-2">{cart.quantity || 1}</span>
                         <button
-                          className='qty-btn'
+                          className="qty-btn"
                           onClick={() =>
                             handleQuantityChange(cart.quantity + 1, cart)
                           }
@@ -284,10 +284,10 @@ const Cart = () => {
                           ? (cart.quantity || 1) * cart.productID.productPrice
                           : "N/A"}
                       </td>
-                      <td className='flex justify-around'>
+                      <td className="flex justify-around">
                         <button
                           onClick={() => handleDelete(cart._id)}
-                          className='btn btn-danger'
+                          className="btn btn-danger"
                         >
                           <DeleteOutlineIcon />
                         </button>
@@ -296,23 +296,23 @@ const Cart = () => {
                   ))}
                 </tbody>
               </table>
-              <div className='summary-container mt-8'>
-                <div className='summary'>
-                  <h4 className='summary-heading'>Order Summary</h4>
-                  <div className='flex justify-between py-2 font-bold'>
+              <div className="summary-container mt-8">
+                <div className="summary">
+                  <h4 className="summary-heading">Order Summary</h4>
+                  <div className="flex justify-between py-2 font-bold">
                     <span>Subtotal</span>
                     <span>NPR. {subtotal}</span>
                   </div>
-                  <div className='flex justify-between py-2 font-bold'>
+                  <div className="flex justify-between py-2 font-bold">
                     <span>Shipping</span>
                     <span>NPR. {shipping}</span>
                   </div>
-                  <div className='flex justify-between py-2 font-bold'>
+                  <div className="flex justify-between py-2 font-bold">
                     <span>Total</span>
                     <span>NPR. {total}</span>
                   </div>
                   <button
-                    className='btn btn-primary mt-4 w-full'
+                    className="btn btn-primary mt-4 w-full"
                     onClick={handleProceedToCheckout}
                   >
                     Proceed to Checkout
@@ -326,67 +326,67 @@ const Cart = () => {
         </div>
       </div>
       {showPopup && (
-        <div className='popup-container fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50'>
-          <div className='popup-content p-4 bg-white rounded-lg w-full max-w-lg'>
-            <h2 className='text-lg font-semibold mb-4'>Continue to Order</h2>
-            <div className='mb-2'>
-              <label htmlFor='address-select' className='block mb-2'>
+        <div className="popup-container fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+          <div className="popup-content p-4 bg-white rounded-lg w-full max-w-lg">
+            <h2 className="text-lg font-semibold mb-4">Continue to Order</h2>
+            <div className="mb-2">
+              <label htmlFor="address-select" className="block mb-2">
                 Select Address:
               </label>{" "}
               <br />
               <select
-                id='address-select'
+                id="address-select"
                 value={selectedAddress}
                 onChange={(e) => handleAddressChange(e.target.value)}
-                className='w-full p-2 border rounded-md'
+                className="w-full p-2 border rounded-md"
               >
-                <option value=''>Select an address</option>
+                <option value="">Select an address</option>
                 {addresses.map((address, index) => (
                   <option key={index} value={address.address}>
                     {address.address}
                   </option>
                 ))}
 
-                <option value='add-new' style={{ backgroundColor: "#D29062" }}>
+                <option value="add-new" style={{ backgroundColor: "#D29062" }}>
                   Add New Address
                 </option>
               </select>
             </div>
-            <div className='payment-method mb-4'>
-              <h3 className='font-semibold mb-2'>Payment Method</h3>
-              <label className='block'>
+            <div className="payment-method mb-4">
+              <h3 className="font-semibold mb-2">Payment Method</h3>
+              <label className="block">
                 <input
-                  type='radio'
-                  name='paymentMethod'
-                  value='Khalti'
+                  type="radio"
+                  name="paymentMethod"
+                  value="Khalti"
                   checked={paymentMethod === "Khalti"}
                   onChange={(e) => setPaymentMethod(e.target.value)}
-                  className='mr-2'
+                  className="mr-2"
                 />
                 Khalti
               </label>
-              <label className='block mt-2'>
+              <label className="block mt-2">
                 <input
-                  type='radio'
-                  name='paymentMethod'
-                  value='COD'
+                  type="radio"
+                  name="paymentMethod"
+                  value="COD"
                   checked={paymentMethod === "COD"}
                   onChange={(e) => setPaymentMethod(e.target.value)}
-                  className='mr-2'
+                  className="mr-2"
                 />
                 Cash on Delivery
               </label>
             </div>
-            <div className='text-center'>
+            <div className="text-center">
               <button
-                className='continue-btn text-white py-2 px-4 rounded-md'
+                className="continue-btn text-white py-2 px-4 rounded-md"
                 style={{ backgroundColor: "#D29062" }}
                 onClick={handleConfirmOrder}
               >
                 Continue to Order
               </button>
               <button
-                className='continue-btn text-white py-2 px-4 rounded-md mt-3'
+                className="continue-btn text-white py-2 px-4 rounded-md mt-3"
                 style={{ backgroundColor: "#D29062" }}
                 onClick={() => setShowPopup(false)}
               >

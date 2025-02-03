@@ -71,7 +71,9 @@
 }
 
 .buttons .btn-add-to-cart {
+
   background-color: black;
+
   color: #fff;
 }
 
@@ -97,6 +99,7 @@
 .quantity-btn {
   border: none;
   background-color: black;
+
   padding: 0.25rem 0.5rem;
   cursor: pointer;
 }
@@ -122,6 +125,7 @@
 
 .review-form button {
   background-color: black;
+
   /* Theme color for submit button */
   color: #fff;
   padding: 10px 20px;
@@ -133,6 +137,7 @@
 
 .review-form button:hover {
   background-color: black;
+
   /* Darker shade for hover effect */
 }
 

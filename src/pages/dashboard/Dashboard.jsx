@@ -22,11 +22,11 @@ const Banner = () => {
   }, [images.length]);
 
   return (
-    <div className='banner-container' style={{ height: "250px" }}>
+    <div className="banner-container" style={{ height: "250px" }}>
       <img
         src={images[currentIndex]}
-        alt='banner'
-        className='banner-image  object-fit-cover h-100'
+        alt="banner"
+        className="banner-image  object-fit-cover h-100"
       />
     </div>
   );
@@ -40,7 +40,7 @@ const categories = [
 
 const Pagination = ({ currentPage, totalPages, paginate }) => {
   return (
-    <div className='pagination-container'>
+    <div className="pagination-container">
       <button
         onClick={() => paginate(currentPage - 1)}
         disabled={currentPage === 1}
@@ -48,12 +48,12 @@ const Pagination = ({ currentPage, totalPages, paginate }) => {
         &lt;
       </button>
       <input
-        type='number'
+        type="number"
         value={currentPage}
         onChange={(e) => paginate(Number(e.target.value))}
-        min='1'
+        min="1"
         max={totalPages}
-        className='page-input'
+        className="page-input"
       />
       <span>of {totalPages}</span>
       <button
@@ -103,32 +103,13 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className='dashboard'>
+      <div className="dashboard">
         <Banner />
-        <div
-          className='categories-container mt-3'
-          style={{ backgroundColor: "#b1beb5" }}
-        >
-          {/* <h2 className='title'>Explore Categories</h2> */}
-          <div className='categories'>
-            {categories.map((category, index) => (
-              <div key={index} className='category-item'>
-                <img
-                  src={category.img}
-                  alt={category.name}
-                  className='category-image'
-                />{" "}
-                <br />
-                <span>{category.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <h4 className="pb-4 text-xl font-bold ms-5 mt-5">Our Products</h4>
 
-        <div className='row container'>
-          <h4 className='pb-4 text-xl font-bold'>Featured Products</h4>
+        <div className="row container gap-3">
           {currentProducts.map((singleProduct, index) => (
-            <div key={index} className='col-12 p-1 col-sm-6 col-lg-3'>
+            <div key={index} className="col-12 p-1 col-sm-6 col-lg-3">
               <ProductCard productInformation={singleProduct} color={"green"} />
             </div>
           ))}

@@ -46,6 +46,7 @@ const ProductCard = ({ productInformation }) => {
   };
 
   return (
+
     <a
       href={`/product/${productInformation._id}`}
       className='text-decoration-none'
@@ -119,6 +120,7 @@ const ProductCard = ({ productInformation }) => {
           >
             Add to Cart
           </button> */}
+
         </div>
       </div>
     </a>

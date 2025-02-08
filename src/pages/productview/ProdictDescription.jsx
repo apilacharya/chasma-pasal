@@ -123,7 +123,6 @@ const ProductDescription = () => {
       toast.error("Server Error");
       console.error(err.message);
     }
-
   };
 
   if (loading) {
@@ -170,7 +169,6 @@ const ProductDescription = () => {
               >
                 +
               </button>
-
             </div>
             <div className='description mt-4'>
               <h5>Description:</h5>

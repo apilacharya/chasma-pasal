@@ -101,7 +101,7 @@ const UpdateProduct = () => {
                 <img
                   src={
                     previewNewImage ||
-                    `http://localhost:3006/products/${oldImage}`
+                    `http://localhost:5000/products/${oldImage}`
                   }
                   alt='Product Image'
                   style={{

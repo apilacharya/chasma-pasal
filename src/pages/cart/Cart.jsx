@@ -372,7 +372,7 @@ const Cart = () => {
                         <img
                           src={
                             cart.productID
-                              ? `http://localhost:5000/products/${cart.productID.productImage}`
+                              ? `http://localhost:3006/products/${cart.productID.productImage}`
                               : "/placeholder.png"
                           }
                           alt={

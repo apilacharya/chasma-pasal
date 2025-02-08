@@ -2,7 +2,7 @@ import axios from "axios";
 
 //creating backend confug
 const api = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "http://localhost:3006",
   withCredentials: true,
   headers: {
     "Content-Type": "multipart/form-data",
@@ -10,7 +10,7 @@ const api = axios.create({
 });
 
 const api2 = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "http://localhost:3006",
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",

@@ -61,7 +61,7 @@ const ProductCard = ({ productInformation }) => {
           <img
             className='h-100 w-100'
             style={{ objectFit: "cover" }}
-            src={`http://localhost:5000/products/${productInformation.productImage}`}
+            src={`http://localhost:3006/products/${productInformation.productImage}`}
             alt={productInformation.productName}
           />
         </div>

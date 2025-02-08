@@ -22,11 +22,11 @@ const Banner = () => {
   }, [images.length]);
 
   return (
-    <div className='banner-container' style={{ height: "250px" }}>
+    <div className="banner-container" style={{ height: "250px" }}>
       <img
         src={images[currentIndex]}
-        alt='banner'
-        className='banner-image  object-fit-cover h-100'
+        alt="banner"
+        className="banner-image  object-fit-cover h-100"
       />
     </div>
   );
@@ -40,7 +40,7 @@ const categories = [
 
 const Pagination = ({ currentPage, totalPages, paginate }) => {
   return (
-    <div className='pagination-container'>
+    <div className="pagination-container">
       <button
         onClick={() => paginate(currentPage - 1)}
         disabled={currentPage === 1}
@@ -48,12 +48,12 @@ const Pagination = ({ currentPage, totalPages, paginate }) => {
         &lt;
       </button>
       <input
-        type='number'
+        type="number"
         value={currentPage}
         onChange={(e) => paginate(Number(e.target.value))}
-        min='1'
+        min="1"
         max={totalPages}
-        className='page-input'
+        className="page-input"
       />
       <span>of {totalPages}</span>
       <button
@@ -72,6 +72,7 @@ const Dashboard = () => {
   // State for pagination
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 8;
+  const user = JSON.parse(localStorage.getItem("userData"));
 
   // Call API initially (page load) - set all fetched products to state
   useEffect(() => {
@@ -103,13 +104,13 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className='dashboard'>
+      <div className="dashboard">
         <Banner />
-        <h4 className='pb-4 text-xl font-bold ms-5 mt-5'>Our Products</h4>
+        <h4 className="pb-4 text-xl font-bold ms-5 mt-5">Our Products</h4>
 
-        <div className='row  container'>
+        <div className="row  container">
           {currentProducts.map((singleProduct, index) => (
-            <div key={index} className='col-12 p-1 col-sm-6 col-lg-3 px-2 py-2'>
+            <div key={index} className="col-12 p-1 col-sm-6 col-lg-3 px-2 py-2">
               <ProductCard productInformation={singleProduct} color={"green"} />
             </div>
           ))}
@@ -120,6 +121,16 @@ const Dashboard = () => {
           totalPages={Math.ceil(products.length / productsPerPage)}
           paginate={paginate}
         />
+
+        {user.isAdmin ? (
+          <div style={{position: 'fixed', bottom: '80px', right: '40px'}}>
+          <button style={{backgroundColor: 'red',  padding: '15px', borderRadius: '30px', outline: 'none', border: '2px solid black'} }>
+            <a href="/admin" style={{textDecoration: 'none', color: 'white',}}>Manage Products</a>
+          </button>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
       <FooterCard />
     </>

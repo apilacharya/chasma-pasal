@@ -19,6 +19,7 @@
     "bootstrap": "^5.3.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "crypto-js": "^4.2.0",
     "framer-motion": "^11.3.22",
     "khalti-checkout-web": "^2.2.0",
     "lucide-react": "^0.424.0",
@@ -36,6 +37,7 @@
     "sweetalert2": "^11.12.4",
     "tipsy_frontend_web": "file:",
     "toast": "^0.5.4",
+    "uuid": "^11.0.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

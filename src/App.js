@@ -23,6 +23,7 @@ import Profile from "./pages/profile/Profile";
 import AdminRoutes from "./pages/protected/adminprot";
 import Register from "./pages/registration/Register";
 import NavbarComponent from "./components/Navbar";
+import EsewaResponse from "./pages/cart/paymentGateway/esewa/EsewaResponse";
 
 function UserLayout() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path='/address' element={<ShippingAddressForm />} />
           <Route path='/product/:id' element={<ProductDescription />} />
           <Route path='/orderlist' element={<OrderList />} />
+          <Route path='/esewa-response' element={<EsewaResponse />} />
 
           {/* Protected routes  */}
           {/* <Route path='/admin/' element={<AdminDashboard />} />

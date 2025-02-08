@@ -46,7 +46,6 @@ const ProductCard = ({ productInformation }) => {
   };
 
   return (
-
     <a
       href={`/product/${productInformation._id}`}
       className='text-decoration-none'
@@ -62,7 +61,7 @@ const ProductCard = ({ productInformation }) => {
           <img
             className='h-100 w-100'
             style={{ objectFit: "cover" }}
-            src={`http://localhost:5000/products/${productInformation.productImage}`}
+            src={`http://localhost:3006/products/${productInformation.productImage}`}
             alt={productInformation.productName}
           />
         </div>
@@ -120,7 +119,6 @@ const ProductCard = ({ productInformation }) => {
           >
             Add to Cart
           </button> */}
-
         </div>
       </div>
     </a>

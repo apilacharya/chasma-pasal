@@ -123,7 +123,6 @@ const ProductDescription = () => {
       toast.error("Server Error");
       console.error(err.message);
     }
-
   };
 
   if (loading) {
@@ -136,7 +135,7 @@ const ProductDescription = () => {
         <div className='product-details'>
           <div className='image-section'>
             <img
-              src={`http://localhost:5000/products/${product.productImage}`}
+              src={`http://localhost:3006/products/${product.productImage}`}
               alt={product.productName}
             />
           </div>
@@ -170,7 +169,6 @@ const ProductDescription = () => {
               >
                 +
               </button>
-
             </div>
             <div className='description mt-4'>
               <h5>Description:</h5>

@@ -131,7 +131,7 @@ const Login = () => {
                   <div className='login-options'>
                     <div>
                       <input type='checkbox' id='remember' />
-                      <span>Remember me</span>
+                      <span className='ms-2'>Remember me </span>
                     </div>
                     <a href='/forgot_password' style={{ color: "blue" }}>
                       Forgot Password?

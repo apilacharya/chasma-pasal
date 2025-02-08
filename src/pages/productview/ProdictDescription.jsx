@@ -131,53 +131,53 @@ const ProductDescription = () => {
 
   return (
     <>
-      <div className='container product-description position-relative'>
-        <div className='product-details'>
-          <div className='image-section'>
+      <div className="container product-description position-relative">
+        <div className="product-details">
+          <div className="image-section">
             <img
               src={`http://localhost:3006/products/${product.productImage}`}
               alt={product.productName}
             />
           </div>
-          <div className='product-info'>
-            <h1 className='text-black'>
+          <div className="product-info">
+            <h1 className="text-black">
               <b style={{ fontSize: "2rem", fontWeight: "500" }}>
                 {product.productName}
               </b>
             </h1>
-            <div className='price-category'>
-              <h3 className='font-bold text-xl'>Rs.{product.productPrice}</h3>
+            <div className="price-category">
+              <h3 className="font-bold text-xl">Rs.{product.productPrice}</h3>
             </div>
             <div
-              className='position-absolute bg-black rounded text-white px-2 d-flex justify-content-center align-items-center'
+              className="position-absolute bg-black rounded text-white px-2 d-flex justify-content-center align-items-center"
               style={{ top: "30px", right: "30px", fontSize: "0.9rem" }}
             >
               {product.productCategory}
             </div>
-            <div className='quantity-control'>
+            <div className="quantity-control">
               <span>Qty:</span>
               <button
                 onClick={decreaseQuantity}
-                className='quantity-btn text-white font-bold mx-2 rounded'
+                className="quantity-btn text-white font-bold mx-2 rounded"
               >
                 -
               </button>
               <span>{quantity}</span>
               <button
                 onClick={increaseQuantity}
-                className='quantity-btn text-white font-bold  mx-2 rounded'
+                className="quantity-btn text-white font-bold  mx-2 rounded"
               >
                 +
               </button>
             </div>
-            <div className='description mt-4'>
+            <div className="description mt-4">
               <h5>Description:</h5>
               <p>{product.productDescription}</p>
             </div>
-            <div className='buttons'>
+            <div className="buttons">
               <button
                 onClick={handleAddToCart}
-                className='btn-add-to-cart btn btn-sm'
+                className="btn-add-to-cart btn btn-sm"
               >
                 Add to cart
               </button>
@@ -185,8 +185,8 @@ const ProductDescription = () => {
           </div>
         </div>
 
-        <div className='reviews-section'>
-          <form className='review-form mt-3' onSubmit={handleReviewSubmit}>
+        <div className="reviews-section">
+          <form className="review-form mt-3" onSubmit={handleReviewSubmit}>
             <h3 style={{ fontSize: "1.8rem", fontWeight: "500" }}>
               Your Review:
             </h3>
@@ -194,22 +194,22 @@ const ProductDescription = () => {
               value={review}
               onChange={(e) => setReview(e.target.value)}
             />
-            <div className='rating-stars'>
+            <div className="rating-stars">
               <StarRating rating={rating} onRatingChange={handleRatingChange} />
             </div>
-            <button type='submit'>Submit Review</button>
+            <button type="submit">Submit Review</button>
           </form>
 
-          <div className='mt-5'>
+          <div className="mt-5">
             <h3>Customer Reviews</h3>
             {reviews.length === 0 ? (
               <p>No reviews yet.</p>
             ) : (
               reviews.map((review, index) => (
-                <div key={index} className='review-item'>
+                <div key={index} className="review-item">
                   <StarRating rating={review.rating} />
-                  <p className='review-text'>{review.review}</p>
-                  <p className='review-author'>- {review.user.fullname}</p>
+                  <p className="review-text">{review.review}</p>
+                  <p className="review-author">- {review.user.fullname}</p>
                 </div>
               ))
             )}

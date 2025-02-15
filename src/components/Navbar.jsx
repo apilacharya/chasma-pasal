@@ -65,7 +65,7 @@ const NavbarComponent = () => {
     //       height={70}
     //       className='d-inline-block align-text-top'
     //     />
-    //     {/* <span className='ml-1'>Tipsy</span> */}
+    //     {/* <span className='ml-1'>Chasma-Pasal</span> */}
     //   </Link>
     //   <button
     //     className='navbar-toggler'
@@ -168,78 +168,77 @@ const NavbarComponent = () => {
     //   </div>
     // </nav>
 
-    <Navbar expand="lg" className="py-3 bg-black">
-      <Container className="bg-black">
+    <Navbar expand='lg' className='py-3 bg-black'>
+      <Container className='bg-black'>
         {/* Logo */}
-        <Link to="/">
-          <Navbar.Brand className="d-flex align-items-center">
+        <Link to='/'>
+          <Navbar.Brand className='d-flex align-items-center'>
             <img
-              src="/assets/icon/main-logo.png"
-              alt="Logo"
+              src='/assets/icon/main-logo.png'
+              alt='Logo'
               height={50}
-              className="me-2"
+              className='me-2'
             />
           </Navbar.Brand>
         </Link>
 
         {/* Toggler */}
-        <Navbar.Toggle aria-controls="navbarNav">
-          <RxHamburgerMenu size={30} className="text-white" />
+        <Navbar.Toggle aria-controls='navbarNav'>
+          <RxHamburgerMenu size={30} className='text-white' />
         </Navbar.Toggle>
 
         {/* Navbar Collapse */}
-        <Navbar.Collapse id="navbarNav">
-          <Nav className="ms-auto d-flex align-items-center gap-4">
+        <Navbar.Collapse id='navbarNav'>
+          <Nav className='ms-auto d-flex align-items-center gap-4'>
             {/* Search Box */}
-            <Form className="d-flex position-relative">
+            <Form className='d-flex position-relative'>
               <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
+                type='search'
+                placeholder='Search'
+                className='me-2'
+                aria-label='Search'
                 onChange={handleSearch}
                 style={{ minWidth: "200px" }}
               />
               <FaSearch
-                className="position-absolute top-50 end-0 translate-middle-y me-3"
+                className='position-absolute top-50 end-0 translate-middle-y me-3'
                 style={{ color: "gray" }}
               />
             </Form>
 
             {/* Cart Icon */}
             <Nav.Link>
-              <Link to="/cart">
-                <FaShoppingCart size={24} className="text-white" />
+              <Link to='/cart'>
+                <FaShoppingCart size={24} className='text-white' />
               </Link>
             </Nav.Link>
-
 
             {/* User Dropdown */}
             {user ? (
               <NavDropdown
                 title={`Hello, ${user.username}`}
-                className="btn btn-sm btn-light py-0 text-xs"
+                className='btn btn-sm btn-light py-0 text-xs'
               >
-                <NavDropdown.Item as={Link} to="/profile">
+                <NavDropdown.Item as={Link} to='/profile'>
                   Profile
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/orderlist">
+                <NavDropdown.Item as={Link} to='/orderlist'>
                   Orders
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/address">
+                <NavDropdown.Item as={Link} to='/address'>
                   Address
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/cart">
+                <NavDropdown.Item as={Link} to='/cart'>
                   Cart
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item onClick={handleLogout} as={Link} to="/login">
+                <NavDropdown.Item onClick={handleLogout} as={Link} to='/login'>
                   Logout
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
-              <Link to="/login">
-                <Button variant="light">Login</Button>
+              <Link to='/login'>
+                <Button variant='light'>Login</Button>
               </Link>
             )}
           </Nav>

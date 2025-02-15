@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { getAllProducts } from "../../apis/api";
 import FooterCard from "../../components/FooterCard";
 import ProductCard from "../../components/ProductCard";
+import Form from "react-bootstrap/Form";
+import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import "./Style.css";
 
 const Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const images = [
     "/assets/images/s1.png",
     "/assets/images/s2.png",
@@ -69,6 +72,8 @@ const Pagination = ({ currentPage, totalPages, paginate }) => {
 const Dashboard = () => {
   // State for all fetched products
   const [products, setProducts] = useState([]); //array
+  const [productsToRender, setProductsToRender] = useState([]); //array
+  const [userInput, setUserInput] = useState("");
   // State for pagination
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 8;
@@ -80,16 +85,34 @@ const Dashboard = () => {
       .then((res) => {
         //response : res.data.products (all products)
         setProducts(res.data.data);
+        setProductsToRender(res.data.data);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
+  useEffect(() => {
+    if (userInput.trim()) {
+      setProductsToRender(
+        products.filter(
+          (product) =>
+            product.productName
+              .toLowerCase()
+              .includes(userInput.toLowerCase()) ||
+            product.productPrice == Number(userInput.toLowerCase()) ||
+            product.productCategory.toLowerCase() == userInput.toLowerCase()
+        )
+      );
+    } else {
+      setProductsToRender(products);
+    }
+  }, [userInput]);
+
   // Calculate the products to display on the current page
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(
+  const currentProducts = productsToRender.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   );
@@ -106,7 +129,26 @@ const Dashboard = () => {
     <>
       <div className='dashboard'>
         <Banner />
-        <h4 className='pb-4 text-xl font-bold ms-5 mt-5'>Our Products</h4>
+        <div className='d-flex justify-content-between align-items-center'>
+          <h4 className='pb-4 text-xl font-bold ms-5 mt-5'>Our Products</h4>
+          <Form className='d-flex position-relative'>
+            <Form.Control
+              type='text'
+              placeholder='Search Products'
+              className='me-2 border-1 border-black'
+              // aria-label='Search'
+              value={userInput}
+              onChange={(e) => {
+                setUserInput(e.target.value);
+              }}
+              style={{ minWidth: "200px" }}
+            />
+            <FaSearch
+              className='position-absolute top-50 end-0 translate-middle-y me-3'
+              style={{ color: "gray" }}
+            />
+          </Form>
+        </div>
 
         <div className='row  container'>
           {currentProducts.map((singleProduct, index) => (

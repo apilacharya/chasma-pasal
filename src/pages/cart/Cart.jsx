@@ -480,7 +480,9 @@ const Cart = () => {
                   </option>
                 ))}
 
-                <option value='add-new w-100'>+ Add New Address</option>
+                <option value='add-new' className='w-100'>
+                  + Add New Address
+                </option>
               </select>
             </div>
             <div className='payment-method mb-4'>

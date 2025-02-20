@@ -122,7 +122,7 @@ const Dashboard = () => {
           paginate={paginate}
         />
 
-        {user.isAdmin ? (
+        {user?.isAdmin ? (
           <div style={{position: 'fixed', bottom: '80px', right: '40px'}}>
           <button style={{backgroundColor: 'red',  padding: '15px', borderRadius: '30px', outline: 'none', border: '2px solid black'} }>
             <a href="/admin" style={{textDecoration: 'none', color: 'white',}}>Manage Products</a>

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
+import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 
@@ -14,6 +14,7 @@ import { Link as ScrollLink } from "react-scroll";
 
 const NavbarComponent = () => {
   const user = JSON.parse(localStorage.getItem("userData"));
+
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("name_asc");
   const [products, setProducts] = useState([]);
@@ -64,7 +65,7 @@ const NavbarComponent = () => {
     //       height={70}
     //       className='d-inline-block align-text-top'
     //     />
-    //     {/* <span className='ml-1'>Tipsy</span> */}
+    //     {/* <span className='ml-1'>Chasma-Pasal</span> */}
     //   </Link>
     //   <button
     //     className='navbar-toggler'
@@ -190,7 +191,7 @@ const NavbarComponent = () => {
         <Navbar.Collapse id='navbarNav'>
           <Nav className='ms-auto d-flex align-items-center gap-4'>
             {/* Search Box */}
-            <Form className='d-flex position-relative'>
+            {/* <Form className='d-flex position-relative'>
               <Form.Control
                 type='search'
                 placeholder='Search'
@@ -203,7 +204,7 @@ const NavbarComponent = () => {
                 className='position-absolute top-50 end-0 translate-middle-y me-3'
                 style={{ color: "gray" }}
               />
-            </Form>
+            </Form> */}
 
             {/* Cart Icon */}
             <Nav.Link>

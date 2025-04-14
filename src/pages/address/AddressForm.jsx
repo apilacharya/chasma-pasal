@@ -142,13 +142,13 @@ const AddressForm = () => {
     <>
       <div className=' p-4' style={{ backgroundColor: "white" }}>
         <div className='d-flex justify-content-between align-items-center mb-3'>
-          <h1 className='h2' style={{ color: "#D29062" }}>
+          <h1 className='h2' style={{ color: "#111" }}>
             Shipping Addresses
           </h1>
           <Button
             variant='primary'
             onClick={() => setIsModalOpen(true)}
-            style={{ backgroundColor: "#D29062", borderColor: "#D29062" }}
+            style={{ backgroundColor: "#111", borderColor: "#111" }}
           >
             Add Address
           </Button>
@@ -164,56 +164,51 @@ const AddressForm = () => {
               {editingAddressId ? "Edit Address" : "Add New Address"}
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body style={{ backgroundColor: "#F8F9FA" }}>
-            <Form onSubmit={handleSubmit}>
-              <Form.Group controlId='formCity' className='mb-3'>
+          <Modal.Body style={{ backgroundColor: "#F8F9FA" }} className='w-100'>
+            <Form onSubmit={handleSubmit} className='w-100'>
+              <Form.Group controlId='formCity' className='mb-3 w-100'>
                 <Form.Label>City</Form.Label>
                 <Form.Control
                   type='text'
                   name='city'
                   placeholder='Enter city'
                   value={form.city}
+                  className='w-100'
                   onChange={handleChange}
                   required
                 />
               </Form.Group>
-              <Form.Group controlId='formAddress' className='mb-3'>
+              <Form.Group controlId='formAddress' className='mb-3 w-100'>
                 <Form.Label>Address</Form.Label>
                 <Form.Control
                   type='text'
                   name='address'
+                  className='w-100'
                   placeholder='Enter full address'
                   value={form.address}
                   onChange={handleChange}
                   required
                 />
               </Form.Group>
-              <Form.Group controlId='formLandmark' className='mb-3'>
+              <Form.Group controlId='formLandmark' className='mb-3 w-100'>
                 <Form.Label>Landmark</Form.Label>
                 <Form.Control
                   type='text'
                   name='landmark'
+                  className='w-100'
                   placeholder='Enter landmark'
                   value={form.landmark}
                   onChange={handleChange}
                   required
                 />
               </Form.Group>
-              <Button
-                variant='primary'
-                type='submit'
-                style={{ backgroundColor: "black", borderColor: "black" }}
-              >
+              <Button variant='success' type='submit' className='w-100'>
                 {editingAddressId ? "Update Address" : "Save Address"}
               </Button>
             </Form>
           </Modal.Body>
           <Modal.Footer>
-            <Button
-              variant='secondary'
-              onClick={resetForm}
-              style={{ backgroundColor: "#111", borderColor: "#111" }}
-            >
+            <Button variant='danger' onClick={resetForm}>
               Close
             </Button>
           </Modal.Footer>

@@ -20,9 +20,11 @@ const EsewaResponse = () => {
   const address = localStorage.getItem("address");
   const paymentType = localStorage.getItem("paymentType");
 
+  const splittedCarts = carts.split(",");
+
   const orderData = {
     userId,
-    carts,
+    splittedCarts,
     total,
     address,
     paymentType,

@@ -206,22 +206,12 @@ const NavbarComponent = () => {
               />
             </Form> */}
 
-            {/* Cart Icon */}
-            <Nav.Link>
-              <Link to='/cart'>
-                <FaShoppingCart size={24} className='text-white' />
-              </Link>
-            </Nav.Link>
-
             {/* User Dropdown */}
             {user ? (
               <NavDropdown
                 title={`Hello, ${user.username}`}
                 className='btn btn-sm btn-light py-0 text-xs'
               >
-                <NavDropdown.Item as={Link} to='/profile'>
-                  Profile
-                </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to='/orderlist'>
                   Orders
                 </NavDropdown.Item>

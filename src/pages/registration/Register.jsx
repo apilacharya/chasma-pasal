@@ -4,9 +4,12 @@ import { toast } from "react-toastify";
 import { registerUserApi } from "../../apis/api";
 import FooterCard from "../../components/FooterCard";
 import "./Register.css";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   //usestate
+
   const [fullname, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setuserName] = useState("");
@@ -54,8 +57,8 @@ const Register = () => {
       setFullNameError("Please enter your full name");
       isValid = false;
     }
-    if (email.trim() === "") {
-      setEmailError("Please enter your email");
+    if (email.trim() === "" && email.includes("@")) {
+      setEmailError("Please enter a valid email");
       isValid = false;
     }
     if (username.trim() === "") {
@@ -110,6 +113,7 @@ const Register = () => {
         if (res.data.success === false) {
           toast.error(res.data.message);
         } else {
+          navigate("/login");
           toast.success(res.data.message);
         }
       })

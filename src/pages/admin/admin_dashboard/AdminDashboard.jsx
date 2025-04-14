@@ -175,6 +175,9 @@ const AdminDashboard = () => {
                             className='form-control'
                             required
                           >
+                            <option value='' disabled>
+                              Select a category
+                            </option>
                             <option value='men'>Men</option>
                             <option value='women'>Women</option>
                             <option value='kids'>Kids</option>

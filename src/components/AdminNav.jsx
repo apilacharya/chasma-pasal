@@ -17,7 +17,10 @@ const AdminNav = () => {
         <ul className='navbar-nav flex-column'>
           {/* <li className="nav-item"><Link to="/dashboard" className="nav-link">Dashboard</Link></li> */}
           <div className='logo mb-3'>
-            <Link className='navbar-brand d-flex align-items-center ms-1'>
+            <Link
+              className='navbar-brand d-flex align-items-center ms-1'
+              to={"/"}
+            >
               <img
                 src='/assets/icon/main-logo.png'
                 alt='Logo'

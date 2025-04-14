@@ -3,8 +3,10 @@ import { toast } from "react-toastify";
 import { loginUserApi } from "../../apis/api";
 import logoImage from "../../../src/assets/images/prod1.jpg";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   //make a usestate for each input
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -46,8 +48,13 @@ const Login = () => {
       if (res.data.success === false) {
         toast.error(res.data.message);
       } else {
-        window.location.href = "/";
-        toast.success(res.data.message);
+        if (res.data.userData.isAdmin == true) {
+          navigate("/admin");
+          toast.success("User logged in as admin");
+        } else {
+          navigate("/");
+          toast.success("User logged in successfully");
+        }
         // success -bool, message-text, token-text, user data
         // setting token and user data in local storage
         localStorage.setItem("token", res.data.token);
